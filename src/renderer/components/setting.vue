@@ -266,7 +266,7 @@
         </el-form>
       </div>
       <hr />
-      <img src="../assets/wechat.png" width="120px" height="120px" alt />
+      <p class="sizex">查看官网，找我微信</p>
       <p class="sizex">扫码进群</p>
       <p class="sizex">探讨摸鱼人生</p>
       <p class="cteamx" @click="openUrl">C.TEAM 出品</p>
@@ -383,7 +383,6 @@ export default {
           e.key != "F5"
         ) {
           var keyx = "";
-
           if (e.key === "ArrowLeft") {
             keyx = "Left";
           } else if (e.key === "ArrowUp") {
@@ -392,6 +391,8 @@ export default {
             keyx = "Down";
           } else if (e.key === "ArrowRight") {
             keyx = "Right";
+          }else if (e.key.trim() === "") {
+            keyx = "不能为空格,请删掉重新输入";
           }
 
           if (that.key_type == 1) {
@@ -554,7 +555,9 @@ export default {
     }
 
     .sizex {
-      font-size: 12px;
+      font-size: 18px;
+      line-height: 35px;
+      font-weight: bold;
     }
 
     .cteamx {
